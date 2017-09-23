@@ -22,7 +22,6 @@ class Rcrd extends React.Component {
     return (
       <div className={s.artwork}>
         {record}
-        this would be album art
       </div>
     );
   }

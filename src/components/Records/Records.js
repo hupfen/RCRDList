@@ -15,14 +15,19 @@ import s from './Records.css';
 
 class Records extends React.Component {
   static propTypes = {
-    record: PropTypes.shape.isRequired,
+    records: PropTypes.shape.isRequired,
   };
 
   render() {
-    const { record } = this.props;
+    let { records } = this.props;
+    if (records === undefined) {
+      records = [{ rcrdName: 'Huzzah' }];
+    }
     return (
       <div className={s.root}>
-        <Rcrd className={s.container} record={record} />
+        {records.map(rcrd =>
+          <Rcrd className={s.container} record={rcrd.rcrdName} />,
+        )}
       </div>
     );
   }

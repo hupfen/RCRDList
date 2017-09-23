@@ -16,6 +16,7 @@ import s from './Contact.css';
 class Contact extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
+    records: PropTypes.shape.isRequired,
   };
 
   render() {
@@ -25,7 +26,7 @@ class Contact extends React.Component {
           <h1>
             {this.props.title}
           </h1>
-          <Records />
+          <Records records={this.props.records} />
         </div>
       </div>
     );

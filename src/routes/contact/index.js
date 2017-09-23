@@ -13,13 +13,19 @@ import Contact from './Contact';
 
 const title = 'Record Grid';
 
-function action() {
+async function action({ fetch }) {
+  const resp = await fetch('/graphql', {
+    body: JSON.stringify({
+      query: '{news{title,link,content}}',
+    }),
+  });
+  const { data } = await resp.json();
   return {
     chunks: ['contact'],
     title,
     component: (
       <Layout>
-        <Contact title={title} />
+        <Contact title={title} records={data.records} />
       </Layout>
     ),
   };
