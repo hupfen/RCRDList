@@ -14,7 +14,7 @@ import s from './Rcrd.css';
 
 class Rcrd extends React.Component {
   static propTypes = {
-    record: PropTypes.shape.isRequired,
+    record: PropTypes.string.isRequired,
   };
 
   render() {

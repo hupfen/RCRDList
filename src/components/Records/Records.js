@@ -19,9 +19,9 @@ class Records extends React.Component {
   };
 
   render() {
-    let { records } = this.props;
-    if (records === undefined) {
-      records = [{ rcrdName: 'Huzzah' }];
+    const { records } = this.props;
+    if (records === null || records === undefined) {
+      return <div />;
     }
     return (
       <div className={s.root}>

@@ -9,7 +9,7 @@
 
 import RcrdType from '../types/RcrdType';
 
-const rcrds = {
+const records = {
   type: RcrdType,
   resolve({ request }) {
     return (
@@ -24,4 +24,4 @@ const rcrds = {
   },
 };
 
-export default rcrds;
+export default records;

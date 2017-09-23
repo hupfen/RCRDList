@@ -16,7 +16,7 @@ const title = 'Record Grid';
 async function action({ fetch }) {
   const resp = await fetch('/graphql', {
     body: JSON.stringify({
-      query: '{news{title,link,content}}',
+      query: '{records{id,bandName,rcrdName}}',
     }),
   });
   const { data } = await resp.json();
