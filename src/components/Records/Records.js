@@ -10,26 +10,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import Records from '../../components/Records';
-import s from './Contact.css';
+import Rcrd from '../Rcrd';
+import s from './Records.css';
 
-class Contact extends React.Component {
+class Records extends React.Component {
   static propTypes = {
-    title: PropTypes.string.isRequired,
+    record: PropTypes.shape.isRequired,
   };
 
   render() {
+    const { record } = this.props;
     return (
       <div className={s.root}>
-        <div className={s.container}>
-          <h1>
-            {this.props.title}
-          </h1>
-          <Records />
-        </div>
+        <Rcrd className={s.container} record={record} />
       </div>
     );
   }
 }
 
-export default withStyles(s)(Contact);
+export default withStyles(s)(Records);
